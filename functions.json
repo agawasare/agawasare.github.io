@@ -1,0 +1,132 @@
+{
+    "allowCustomDataForDataTypeAny": true,
+    "functions": [
+        {
+            "description": "Provides live stock updates for SAS Online. e.g. ticker(\"NSE\", 26000, \"CompactMarketDataMessage\", \"excel\")",
+            "id": "TICKER",
+            "name": "TICKER",
+            "options": {
+                "stream": true
+            },
+            "parameters": [
+                {
+                    "description": "URL of Chart Page taken from SAS Online",
+                    "name": "chartUrl",
+                    "type": "string"
+                },
+                {
+                    "description": "Name of exchange like NSE, Check __exchange_codes",
+                    "name": "exchangeName",
+                    "type": "string"
+                },
+                {
+                    "description": "Token code of scrip",
+                    "name": "instrumentToken",
+                    "type": "number"
+                },
+                {
+                    "description": "Type of subscription like CompactMarketDataMessage",
+                    "name": "subscriptionType",
+                    "type": "any"
+                },
+                {
+                    "description": "Location of subscription like app-navbar",
+                    "name": "subscriptionLocation",
+                    "type": "any"
+                }
+            ],
+            "result": {
+                "dimensionality": "matrix",
+                "type": "number"
+            }
+        },
+        {
+            "description": "Allows importing json data and flatten it into tabular format",
+            "id": "IMPORTJSON",
+            "name": "IMPORTJSON",
+            "parameters": [
+                {
+                    "description": "URL to post/fetch data",
+                    "name": "url",
+                    "type": "any"
+                },
+                {
+                    "description": "Response Json key to check for success response",
+                    "name": "successField",
+                    "type": "any"
+                },
+                {
+                    "description": "Value of Response Json key to check for success response",
+                    "name": "successFieldValue",
+                    "type": "any"
+                },
+                {
+                    "description": "Array from response JSON to flatten into table",
+                    "name": "flattenArrayPath",
+                    "type": "any"
+                },
+                {
+                    "description": "URL Query string for which repeated api calls need to be made",
+                    "name": "queryParam",
+                    "optional": true,
+                    "type": "any"
+                },
+                {
+                    "description": "String value, seperated by \";\", of URL Query string for which repeated api calls need to be made",
+                    "name": "queryParamValues",
+                    "optional": true,
+                    "type": "any"
+                }
+            ],
+            "result": {}
+        },
+        {
+            "description": "Allows accessing api and flattens returned json data into tabular format",
+            "id": "WEBAPIREQUEST",
+            "name": "WEBAPIREQUEST",
+            "parameters": [
+                {
+                    "description": "URL to post/fetch data",
+                    "name": "url",
+                    "type": "any"
+                },
+                {
+                    "description": "HttpMethod",
+                    "name": "method",
+                    "type": "any"
+                },
+                {
+                    "description": "Body of the request if POST call",
+                    "name": "requestBody",
+                    "optional": true,
+                    "type": "any"
+                },
+                {
+                    "description": "Array from response JSON to flatten into table",
+                    "name": "flattenArrayPath",
+                    "optional": true,
+                    "type": "any"
+                },
+                {
+                    "description": "Object key from response JSON to flatten",
+                    "name": "flattenObjPath",
+                    "optional": true,
+                    "type": "any"
+                },
+                {
+                    "description": "Access Token if accessing secured endpoint",
+                    "name": "authToken",
+                    "optional": true,
+                    "type": "any"
+                },
+                {
+                    "description": "Message for confirmation",
+                    "name": "confirmationMessage",
+                    "optional": true,
+                    "type": "any"
+                }
+            ],
+            "result": {}
+        }
+    ]
+}
