@@ -78,7 +78,9 @@
                     "type": "any"
                 }
             ],
-            "result": {}
+            "result": {
+                "dimensionality": "matrix"
+            }
         },
         {
             "description": "Allows accessing api and flattens returned json data into tabular format",
@@ -126,7 +128,9 @@
                     "type": "any"
                 }
             ],
-            "result": {}
+            "result": {
+                "dimensionality": "matrix"
+            }
         },
         {
             "description": "Search for products that match a given substring. Try =SCRIPTLAB.DATATYPESCUSTOMFUNCTIONS.PRODUCTSEARCH(\"chef\", false).",
