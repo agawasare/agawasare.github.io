@@ -133,6 +133,31 @@
             }
         },
         {
+            "description": "Allows importing json data and flatten it into tabular format",
+            "id": "REGEXEXTRACT",
+            "name": "REGEXEXTRACT",
+            "parameters": [
+                {
+                    "description": "Original string",
+                    "name": "stringToExtractFrom",
+                    "type": "string"
+                },
+                {
+                    "description": "Regular expression text",
+                    "name": "regex",
+                    "type": "string"
+                },
+                {
+                    "description": "Regex match return array and we need to provide which item to return",
+                    "name": "indexOfRequiredTextAfterMatch",
+                    "type": "number"
+                }
+            ],
+            "result": {
+                "type": "string"
+            }
+        },
+        {
             "description": "Search for products that match a given substring. Try =SCRIPTLAB.DATATYPESCUSTOMFUNCTIONS.PRODUCTSEARCH(\"chef\", false).",
             "id": "PRODUCTSEARCH",
             "name": "PRODUCTSEARCH",
